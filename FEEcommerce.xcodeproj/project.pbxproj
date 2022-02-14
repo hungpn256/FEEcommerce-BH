@@ -11,7 +11,6 @@
 		2982E0EE27B6B54D004D95AC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2982E0ED27B6B54D004D95AC /* User.swift */; };
 		29F4D54D27BA600C003208F5 /* UIcolor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F4D54C27BA600C003208F5 /* UIcolor.swift */; };
 		C26535DC27B5FA2500C0CA9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26535DB27B5FA2500C0CA9E /* AppDelegate.swift */; };
-		C26535DE27B5FA2500C0CA9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26535DD27B5FA2500C0CA9E /* SceneDelegate.swift */; };
 		C26535E027B5FA2500C0CA9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26535DF27B5FA2500C0CA9E /* ViewController.swift */; };
 		C26535E327B5FA2500C0CA9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26535E127B5FA2500C0CA9E /* Main.storyboard */; };
 		C26535E527B5FA2600C0CA9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C26535E427B5FA2600C0CA9E /* Assets.xcassets */; };
@@ -27,6 +26,7 @@
 		C265360F27B61A9D00C0CA9E /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265360E27B61A9D00C0CA9E /* UIView.swift */; };
 		C265361327B61AB800C0CA9E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265361127B61AB800C0CA9E /* LoginViewController.swift */; };
 		C265361427B61AB800C0CA9E /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C265361227B61AB800C0CA9E /* LoginViewController.xib */; };
+		C265361627B63BD600C0CA9E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265361527B63BD600C0CA9E /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,6 @@
 		29F4D54C27BA600C003208F5 /* UIcolor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIcolor.swift; sourceTree = "<group>"; };
 		C26535D827B5FA2500C0CA9E /* FEEcommerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FEEcommerce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C26535DB27B5FA2500C0CA9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C26535DD27B5FA2500C0CA9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C26535DF27B5FA2500C0CA9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C26535E227B5FA2500C0CA9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C26535E427B5FA2600C0CA9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,6 +45,7 @@
 		C265360E27B61A9D00C0CA9E /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		C265361127B61AB800C0CA9E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C265361227B61AB800C0CA9E /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		C265361527B63BD600C0CA9E /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +98,6 @@
 				C265360927B6195E00C0CA9E /* Views */,
 				C265360827B6195400C0CA9E /* Extendsions */,
 				C26535DB27B5FA2500C0CA9E /* AppDelegate.swift */,
-				C26535DD27B5FA2500C0CA9E /* SceneDelegate.swift */,
 				C26535DF27B5FA2500C0CA9E /* ViewController.swift */,
 				C26535E127B5FA2500C0CA9E /* Main.storyboard */,
 				C26535E427B5FA2600C0CA9E /* Assets.xcassets */,
@@ -115,6 +114,7 @@
 				C265360E27B61A9D00C0CA9E /* UIView.swift */,
 				2982E0EA27B6A855004D95AC /* Encodable.swift */,
 				29F4D54C27BA600C003208F5 /* UIcolor.swift */,
+				C265361527B63BD600C0CA9E /* String.swift */,
 			);
 			path = Extendsions;
 			sourceTree = "<group>";
@@ -243,8 +243,8 @@
 				C26535E027B5FA2500C0CA9E /* ViewController.swift in Sources */,
 				2982E0EE27B6B54D004D95AC /* User.swift in Sources */,
 				C26535DC27B5FA2500C0CA9E /* AppDelegate.swift in Sources */,
+				C265361627B63BD600C0CA9E /* String.swift in Sources */,
 				C265360D27B61A8A00C0CA9E /* API.swift in Sources */,
-				C26535DE27B5FA2500C0CA9E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
