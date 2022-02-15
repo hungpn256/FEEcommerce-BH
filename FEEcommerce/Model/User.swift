@@ -7,9 +7,18 @@
 
 import Foundation
 
-struct User:Codable{
+struct UserGET:Codable{
     let id:String
-    let last:String
-    let first:String
-    let born:Int
+    let email: String
+    let username: String
+    let phone: String
+    let DOB: String
+}
+
+struct UserPOST:Codable{
+    let email: String
+    let password: String
+    let username: String
+    let phone: String
+    let DOB: String
 }

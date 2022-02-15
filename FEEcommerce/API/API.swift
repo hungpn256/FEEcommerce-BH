@@ -11,6 +11,7 @@ import SwiftUI
 
 enum APIerr:Error{
     case SingleDataErr
+    case addDataErr
 }
 
 class API{
@@ -75,13 +76,19 @@ class API{
     
     
     
-    func addData(collection:String,data:[String:Any]){
+    func addData(collection:String,data:[String:Any],completion:@escaping (Result<String,Error>) -> Void){
         var ref: DocumentReference? = nil
         ref = db?.collection(collection).addDocument(data: data) {
             err in
                 if let err = err {
+                    DispatchQueue.main.async {
+                        completion(.failure(APIerr.addDataErr))
+                    }
                     print("Error adding document: \(err)")
                 } else {
+                    DispatchQueue.main.async {
+                        completion(.success(ref!.documentID))
+                    }
                     print("Document added with ID: \(ref!.documentID)")
                 }
         }

@@ -9,11 +9,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="FEEcommerce" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="FEEcommerce" customModuleProvider="target">
             <connections>
-                <outlet property="btnLogin" destination="RNA-eu-Zhc" id="EhV-1a-kyJ"/>
-                <outlet property="passwordTextField" destination="Qro-9A-7VJ" id="Qu8-Wk-VZV"/>
-                <outlet property="usernameTextField" destination="RJw-4x-Wyo" id="2fF-rI-8Ui"/>
+                <outlet property="btnRegister" destination="RNA-eu-Zhc" id="KzC-99-Rld"/>
+                <outlet property="passwordTextField" destination="Qro-9A-7VJ" id="jJq-ue-kZo"/>
+                <outlet property="rePasswordTextField" destination="ttk-Is-7y7" id="dNg-id-atC"/>
+                <outlet property="usernameTextField" destination="RJw-4x-Wyo" id="MqJ-Wb-StW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -36,53 +37,45 @@
                                     </constraints>
                                 </imageView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z99-jN-fHZ">
-                                    <rect key="frame" x="16" y="252" width="382" height="232"/>
+                                    <rect key="frame" x="16" y="252" width="382" height="276"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RJw-4x-Wyo" userLabel="email textfield">
-                                            <rect key="frame" x="52" y="0.0" width="330" height="52"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="52" id="3aN-xT-c6x"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="email"/>
-                                            <connections>
-                                                <action selector="usernameEditingDidEnd:" destination="-1" eventType="editingDidEnd" id="1QL-zE-zIi"/>
-                                            </connections>
-                                        </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qro-9A-7VJ" userLabel="password textfield">
                                             <rect key="frame" x="52" y="60" width="278" height="52"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="52" id="jqE-ZI-uOY"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                                            <connections>
+                                                <action selector="passwordEditingDidEnd:" destination="-1" eventType="editingDidEnd" id="mn2-5p-B5o"/>
+                                            </connections>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Re-Password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ttk-Is-7y7" userLabel="password textfield">
+                                            <rect key="frame" x="8" y="120" width="374" height="52"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="52" id="oVP-oP-bwl"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                             <connections>
-                                                <action selector="passwordEditingDidEnd:" destination="-1" eventType="editingDidEnd" id="Id4-tD-teu"/>
+                                                <action selector="RepasswordEditingDidEnd:" destination="-1" eventType="editingDidEnd" id="1ry-Ur-RiY"/>
                                             </connections>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNA-eu-Zhc">
-                                            <rect key="frame" x="0.0" y="136" width="382" height="52"/>
+                                            <rect key="frame" x="0.0" y="180" width="382" height="52"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="52" id="CPx-jv-zKw"/>
                                             </constraints>
                                             <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="filled" title="Log In">
+                                            <buttonConfiguration key="configuration" style="filled" title="Register">
                                                 <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="18"/>
                                             </buttonConfiguration>
                                             <connections>
-                                                <action selector="submitLogin:" destination="-1" eventType="touchUpInside" id="l1J-NZ-a7B"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBN-YV-Set">
-                                            <rect key="frame" x="-3" y="201" width="73" height="31"/>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title="Sign up"/>
-                                            <connections>
-                                                <action selector="navigateRegister:" destination="-1" eventType="touchUpInside" id="rHk-hK-gTq"/>
+                                                <action selector="submitRegister:" destination="-1" eventType="touchUpInside" id="jOS-5R-iN8"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGT-BC-uvF">
-                                            <rect key="frame" x="304" y="201" width="74" height="31"/>
+                                            <rect key="frame" x="304" y="245" width="74" height="31"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Forgot?"/>
                                         </button>
@@ -117,23 +110,35 @@
                                             </constraints>
                                             <imageReference key="image" image="person" catalog="system" symbolScale="large"/>
                                         </imageView>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RJw-4x-Wyo" userLabel="email textfield">
+                                            <rect key="frame" x="52" y="0.0" width="330" height="52"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="52" id="3aN-xT-c6x"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="email"/>
+                                            <connections>
+                                                <action selector="usernameEditingDidEnd:" destination="-1" eventType="editingDidEnd" id="WjU-Sh-TbS"/>
+                                            </connections>
+                                        </textField>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstItem="tBN-YV-Set" firstAttribute="leading" secondItem="z99-jN-fHZ" secondAttribute="leading" constant="-3" id="0UV-hT-jT8"/>
                                         <constraint firstItem="Qro-9A-7VJ" firstAttribute="leading" secondItem="VdY-L8-Ikr" secondAttribute="trailing" id="1af-tz-tIe"/>
                                         <constraint firstItem="D6R-A1-oPZ" firstAttribute="leading" secondItem="z99-jN-fHZ" secondAttribute="leading" id="1sc-Dm-HfN"/>
-                                        <constraint firstAttribute="bottom" secondItem="tBN-YV-Set" secondAttribute="bottom" id="3RI-7D-Ns5"/>
                                         <constraint firstItem="Wem-Bo-CKw" firstAttribute="top" secondItem="Qro-9A-7VJ" secondAttribute="top" id="AQ9-Q9-pxA"/>
                                         <constraint firstAttribute="trailing" secondItem="RGT-BC-uvF" secondAttribute="trailing" constant="4" id="AeW-4y-TP5"/>
                                         <constraint firstAttribute="trailing" secondItem="RNA-eu-Zhc" secondAttribute="trailing" id="BM3-kR-CNi"/>
+                                        <constraint firstItem="ttk-Is-7y7" firstAttribute="top" secondItem="Qro-9A-7VJ" secondAttribute="bottom" constant="8" id="Eax-eN-N2d"/>
+                                        <constraint firstItem="RNA-eu-Zhc" firstAttribute="top" secondItem="ttk-Is-7y7" secondAttribute="bottom" constant="8" id="FgU-ad-m1f"/>
                                         <constraint firstAttribute="bottom" secondItem="RNA-eu-Zhc" secondAttribute="bottom" constant="44" id="Hnn-9Z-q1Y"/>
-                                        <constraint firstItem="RNA-eu-Zhc" firstAttribute="top" secondItem="Qro-9A-7VJ" secondAttribute="bottom" constant="24" id="OuN-Nv-QJu"/>
                                         <constraint firstAttribute="bottom" secondItem="RGT-BC-uvF" secondAttribute="bottom" id="SgR-Vp-gMq"/>
                                         <constraint firstItem="RJw-4x-Wyo" firstAttribute="top" secondItem="z99-jN-fHZ" secondAttribute="top" id="VS3-22-EQY"/>
                                         <constraint firstAttribute="trailing" secondItem="RJw-4x-Wyo" secondAttribute="trailing" id="VWx-tl-bKV"/>
                                         <constraint firstItem="Qro-9A-7VJ" firstAttribute="top" secondItem="RJw-4x-Wyo" secondAttribute="bottom" constant="8" id="Xoa-NP-KLm"/>
+                                        <constraint firstAttribute="trailing" secondItem="ttk-Is-7y7" secondAttribute="trailing" id="ZBL-Q1-nXN"/>
                                         <constraint firstItem="RJw-4x-Wyo" firstAttribute="leading" secondItem="D6R-A1-oPZ" secondAttribute="trailing" id="acM-Fs-yyQ"/>
+                                        <constraint firstItem="ttk-Is-7y7" firstAttribute="leading" secondItem="z99-jN-fHZ" secondAttribute="leadingMargin" id="eGn-2V-EgP"/>
                                         <constraint firstItem="VdY-L8-Ikr" firstAttribute="leading" secondItem="z99-jN-fHZ" secondAttribute="leading" id="fBm-H5-GS8"/>
                                         <constraint firstItem="D6R-A1-oPZ" firstAttribute="top" secondItem="RJw-4x-Wyo" secondAttribute="top" id="geY-tc-lMa"/>
                                         <constraint firstAttribute="trailing" secondItem="Wem-Bo-CKw" secondAttribute="trailing" id="lqQ-36-wlc"/>
@@ -143,7 +148,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rtm-Zl-xh2">
-                                    <rect key="frame" x="16" y="492" width="382" height="327"/>
+                                    <rect key="frame" x="16" y="536" width="382" height="283"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MtT-lO-m7M">
                                             <rect key="frame" x="179.5" y="8" width="23.5" height="21"/>
