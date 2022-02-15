@@ -40,7 +40,9 @@ class API{
                 completion(.failure(err))
             } else {
                 let results:[T] = self?.returnArrDocument(querysnapshot: querySnapshot!,model:modelData) ?? []
-                completion(.success(results))
+                DispatchQueue.main.async {
+                    completion(.success(results))
+                }
             }
         }
     }
@@ -60,7 +62,10 @@ class API{
                 }
                 let json = try JSONSerialization.data(withJSONObject: result)
                 let decoded = try JSON.decoder.decode(modelData, from: json)
-                completion(.success(decoded))
+                print(decoded,"decode")
+                DispatchQueue.main.async {
+                    completion(.success(decoded))
+                }
             }
             catch{
                 print(error)
