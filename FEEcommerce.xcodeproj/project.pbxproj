@@ -293,11 +293,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C265361327B61AB800C0CA9E /* LoginViewController.swift in Sources */,
-<<<<<<< HEAD
 				C22792CE27BB47060087AA1B /* RegisterViewController.swift in Sources */,
-=======
 				177CE87127BB8A0B00C23A60 /* ImageCollectionViewCell.swift in Sources */,
->>>>>>> fe330cfceb4ff83fc50050b2becbb283d7f66726
 				2982E0EB27B6A855004D95AC /* Encodable.swift in Sources */,
 				C265360F27B61A9D00C0CA9E /* UIView.swift in Sources */,
 				29F4D54D27BA600C003208F5 /* UIcolor.swift in Sources */,
