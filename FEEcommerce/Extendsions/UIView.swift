@@ -6,6 +6,9 @@
 //
 
 import Foundation
+<<<<<<< HEAD
+
+=======
 import UIKit
 
 extension UIView{
@@ -68,3 +71,4 @@ extension UIView{
         }, completion: completion)
     }
 }
+>>>>>>> b814be763d4635bea860d4abe9dcf2ecc278e071
