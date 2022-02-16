@@ -63,7 +63,7 @@ extension UIView{
         self.alpha = 1.0
         
         UIView.animate(withDuration: duration, delay: delay, options: UIView.AnimationOptions.curveEaseOut, animations: {
-            self.isHidden = true
+            self.isHidden =  true
             self.alpha = 0.0
         }, completion: completion)
     }
