@@ -18,6 +18,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
     func configure(url:String){
         let imgUrl = URL(string: url)
         imageView.contentMode = .scaleAspectFill
+        imageView.layer.cornerRadius = 8.0
         imageView.sd_setImage(with: imgUrl, completed: nil)
     }
 
