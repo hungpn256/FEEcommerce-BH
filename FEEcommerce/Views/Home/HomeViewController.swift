@@ -8,7 +8,8 @@
 import UIKit
 import SDWebImage
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController{
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     let arr:[String] = ["https://www.ginx.tv/uploads2/Sifu/sifu_age_cover.webp",
@@ -19,10 +20,14 @@ class HomeViewController: UIViewController {
     ]
     
     let arrItem:[Item] = [
-        Item(name: "Đồ ngủ cho bé nam", price: 195.000, brand: "Noxus"),
-        Item(name: "Đồ ngủ cho bé nữ", price: 295.000, brand: "Noxus"),
-        Item(name: "Áo len giữ nhiệt bodyfit", price: 495.000, brand: "HUNGSSS"),
-        Item(name: "Hộp cơm giữ nhiệt TOSHIBA", price: 395.000, brand: "TOSHIBA"),
+        Item(name: "Clothes for child", price: 195.000, brand: "Noxus",imageUrl: "https://i.pinimg.com/originals/91/c4/e7/91c4e7398cad49776acfeeb3b88f7ed8.png"),
+        Item(name: "Clothes for child", price: 295.000, brand: "Noxus",imageUrl: "https://www.designmantic.com/logo-images/166857.png?company=Company+Name&slogan=&verify=1"),
+        Item(name: "Sweater body fit unisex", price: 495.000, brand: "HUNGSSS",imageUrl: "https://i.pinimg.com/originals/91/c4/e7/91c4e7398cad49776acfeeb3b88f7ed8.png"),
+        Item(name: "Rice cooker", price: 395.000, brand: "TOSHIBA",imageUrl: "https://i.pinimg.com/originals/91/c4/e7/91c4e7398cad49776acfeeb3b88f7ed8.png"),
+        Item(name: "Clothes for child", price: 195.000, brand: "Noxus",imageUrl: "https://i.pinimg.com/originals/91/c4/e7/91c4e7398cad49776acfeeb3b88f7ed8.png"),
+        Item(name: "Clothes for child", price: 295.000, brand: "Noxus",imageUrl: "https://www.designmantic.com/logo-images/166857.png?company=Company+Name&slogan=&verify=1"),
+        Item(name: "Sweater body fit unisex", price: 495.000, brand: "HUNGSSS",imageUrl: "https://i.pinimg.com/originals/91/c4/e7/91c4e7398cad49776acfeeb3b88f7ed8.png"),
+        Item(name: "Rice cooker", price: 395.000, brand: "TOSHIBA",imageUrl: "https://i.pinimg.com/originals/91/c4/e7/91c4e7398cad49776acfeeb3b88f7ed8.png")
     ]
     
     override func viewDidLoad() {
@@ -51,6 +56,7 @@ class HomeViewController: UIViewController {
     func registerCollectionCell(){
         collectionView.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "imageCollectionViewCell")
         collectionView.register(UINib(nibName: "ItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "itemCollectionViewCell")
+        collectionView.register(UINib(nibName: "HeaderSectionCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerSection")
     }
     
     static func createItem(fractionalWidth:CGFloat,fractionalHeight:CGFloat) -> NSCollectionLayoutItem{
@@ -71,11 +77,18 @@ class HomeViewController: UIViewController {
         return group
     }
     
+    static func createHeader() -> [NSCollectionLayoutBoundarySupplementaryItem]{
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(50))
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        return [header]
+    }
+    
+    
     func createSectionLayout(section:Int) -> NSCollectionLayoutSection{
         switch section {
         case 0:
             let item = HomeViewController.createItem(fractionalWidth: 1.0, fractionalHeight: 1.0)
-            item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10)
+            item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 15, trailing: 10)
             let groupHorizontal = HomeViewController.createGroupHorizontal(
                 fractionalWidth: 0.9,
                 absHeight: 140,
@@ -87,16 +100,42 @@ class HomeViewController: UIViewController {
         case 1:
             let item = HomeViewController.createItem(fractionalWidth: 1.0, fractionalHeight: 1.0)
             let groupHorizontal = HomeViewController.createGroupHorizontal(
-                fractionalWidth: 0.5,
-                absHeight: 170,
+                fractionalWidth: 0.42,
+                absHeight: 220,
                 subitem: item,
                 count: 1)
             let section = NSCollectionLayoutSection(group: groupHorizontal)
+            let header = HomeViewController.createHeader()
+            section.boundarySupplementaryItems = header
             section.orthogonalScrollingBehavior = .groupPaging
+            return section
+        case 2:
+            let item = HomeViewController.createItem(fractionalWidth: 1.0, fractionalHeight: 1.0)
+            item.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 15, bottom: 15, trailing: 15)
+            let groupHorizontal = HomeViewController.createGroupHorizontal(
+                fractionalWidth: 0.42,
+                absHeight: 220,
+                subitem: item,
+                count: 1)
+            let section = NSCollectionLayoutSection(group: groupHorizontal)
+            let header = HomeViewController.createHeader()
+            section.boundarySupplementaryItems = header
+            section.orthogonalScrollingBehavior = .groupPaging
+            return section
+        case 3:
+            let item = HomeViewController.createItem(fractionalWidth: 1.0, fractionalHeight: 1.0)
+            item.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 15, bottom: 0, trailing: 15)
+            let groupHorizontal = HomeViewController.createGroupHorizontal(
+                fractionalWidth: 1,
+                absHeight: 220,
+                subitem: item,
+                count: 2)
+            let section = NSCollectionLayoutSection(group: groupHorizontal)
+            let header = HomeViewController.createHeader()
+            section.boundarySupplementaryItems = header
             return section
         default:
             let item = HomeViewController.createItem(fractionalWidth: 1.0, fractionalHeight: 1.0)
-            item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
             let groupVertical = HomeViewController.createGroupVertical(
                 fractionalWidth: 1,
                 absHeight: 250,
@@ -108,19 +147,41 @@ class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController:UICollectionViewDelegate{
+extension HomeViewController:UICollectionViewDelegate,HeaderSectionCollectionReusableViewDelegate{
+    func navigate(sender: UICollectionReusableView, indexPath: IndexPath) {
+        print(indexPath)
+    }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader{
+            let reuseableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerSection", for: indexPath) as! HeaderSectionCollectionReusableView
+            if indexPath.section == 1{
+                reuseableView.configure(title: "Hot Deal")
+            }
+            else if indexPath.section == 2{
+                reuseableView.configure(title: "Top Sale")
+            }
+            else if indexPath.section == 3{
+                reuseableView.configure(title: "For you")
+            }
+            reuseableView.delegate = self
+            reuseableView.indexPath = indexPath
+            return reuseableView
+        }
+        return UICollectionReusableView()
+    }
 }
 
 extension HomeViewController:UICollectionViewDelegateFlowLayout{
-
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+//        return CGSize(width: 300.0, height: 150.0)
+//    }
     
 }
 
 extension HomeViewController:UICollectionViewDataSource{
-    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -131,16 +192,20 @@ extension HomeViewController:UICollectionViewDataSource{
             return arrItem.count
         }
         else{
-            return 0
+            return arrItem.count
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if(indexPath.section == 1){
-            
+        if(indexPath.section == 0){
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCollectionViewCell", for: indexPath) as! ImageCollectionViewCell
+            cell.configure(url: arr[indexPath.row])
+            return cell
         }
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCollectionViewCell", for: indexPath) as! ImageCollectionViewCell
-        cell.configure(url: arr[indexPath.row])
-        return cell
+        else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCollectionViewCell", for: indexPath) as! ItemCollectionViewCell
+            cell.configure(brand: arrItem[indexPath.row].brand, name: arrItem[indexPath.row].name, price:arrItem[indexPath.row].price,url: arrItem[indexPath.row].imageUrl)
+            return cell
+        }
     }
 }

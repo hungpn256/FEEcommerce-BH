@@ -11,4 +11,5 @@ struct Item:Codable{
     let name:String
     let price:Double
     let brand:String
+    let imageUrl:String
 }
